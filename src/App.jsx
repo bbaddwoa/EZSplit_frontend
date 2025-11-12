@@ -7,7 +7,7 @@ import Home from "./ezSplit/home";
 import TestPage from "./TestPage";
 import ApiTest from "./ApiTest";
 import EZSplitOptions from "./ezSplit/ezSplitOptions";
-import NumberOfGuests from "./ezSplit/NumberofGuests";
+import NumberOfGuests from "./ezSplit/NumberOfGuests";
 import EZSplitPaymentPage from "./ezSplit/ezSplit-PaymentPage";
 import SplitEvenlyPaymentPage from "./splitEvenly/splitEvenlyPaymentPage";
 import CustomSplitPaymentPage from "./customSplit/customSplitPaymentPage";
@@ -30,23 +30,50 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="/api-test" element={<ApiTest />} />
-        <Route path="/table/:tableNumber/options" element={<EZSplitOptions />} />
-        <Route path="/table/:tableNumber/pay-full" element={<FullPaymentPage />} />
-        <Route path="/table/:tableNumber/number-of-guests" element={<NumberOfGuests />} />  
-        <Route path="/table/:tableNumber/ezsplit-payment/:guestCount" element={<EZSplitPaymentPage />} />
-        <Route path="/table/:tableNumber/split-evenly/:guestCount" element={<SplitEvenlyPaymentPage />} />
-        <Route path="/table/:tableNumber/select-items" element={<SelectItems />} />
-        <Route path="/table/:tableNumber/custom-split-payment" element={<CustomSplitPaymentPage />} />
+        <Route
+          path="/table/:tableNumber/options"
+          element={<EZSplitOptions />}
+        />
+        <Route
+          path="/table/:tableNumber/pay-full"
+          element={<FullPaymentPage />}
+        />
+        <Route
+          path="/table/:tableNumber/number-of-guests"
+          element={<NumberOfGuests />}
+        />
+        <Route
+          path="/table/:tableNumber/ezsplit-payment/:guestCount"
+          element={<EZSplitPaymentPage />}
+        />
+        <Route
+          path="/table/:tableNumber/split-evenly/:guestCount"
+          element={<SplitEvenlyPaymentPage />}
+        />
+        <Route
+          path="/table/:tableNumber/select-items"
+          element={<SelectItems />}
+        />
+        <Route
+          path="/table/:tableNumber/custom-split-payment"
+          element={<CustomSplitPaymentPage />}
+        />
 
         <Route path="/table/:tableNumber/receipt" element={<ReceiptPage />} />
-        <Route path="/table/:tableNumber/thank-you" element={<ThankYouPage />} />
-        
+        <Route
+          path="/table/:tableNumber/thank-you"
+          element={<ThankYouPage />}
+        />
+
         {/* Redirect old payment route to options page */}
-        <Route path="/table/:tableNumber/payment" element={<PaymentRedirect />} />
-        
+        <Route
+          path="/table/:tableNumber/payment"
+          element={<PaymentRedirect />}
+        />
+
         {/* Redirect standalone /options to home page */}
         <Route path="/options" element={<Navigate to="/" replace />} />
-        
+
         {/* Commented out until auth components are created */}
         {/* <Route path="/register" element={<Register />} /> */}
         {/* <Route path="/login" element={<Login />} /> */}
